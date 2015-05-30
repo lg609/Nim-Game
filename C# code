@@ -9,14 +9,16 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
+            //获得石子的堆数
             int N = Convert.ToInt32(Console.ReadLine());
+            //获得每堆石子的个数
             string[] str = Console.ReadLine().Split(' ');
             int[] A = new int[N];
             int XOR = Convert.ToInt32(str[0]);
             for (int i = 1; i < N; i++)
             {
                 A[i] = Convert.ToInt32(str[i]);
-                XOR = XOR ^ A[i];     //按位异或
+                XOR = XOR ^ A[i];     //按位异或  判断是不是平衡状态，若是则后拿石子的player win
             }
             if (XOR == 0)
             {
